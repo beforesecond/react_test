@@ -19,6 +19,28 @@
   color: white;
 }
 
+.text-2line {
+  position: relative;
+  font-size: 14px;
+  color: black;
+  font-family: sans-serif;
+  width: 250px; /* Could be anything you like. */
+}
+
+.text-red {
+  color: #c60f0f;
+}
+
+.text-concat {
+  position: relative;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 2.6em; /* (Number of lines you want visible) * (line-height) */
+  line-height: 1.4em;
+  text-align: justify;
+}
+
 .App-link {
   color: #61dafb;
 }

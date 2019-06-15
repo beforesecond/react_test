@@ -3,28 +3,12 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 import 'antd/dist/antd.css'
-import { CardComponent, GridComponent } from './components'
-import { DatePicker } from 'antd'
+import IndexPage from './pages/Index'
 
 function App() {
   return (
     <div>
-      <GridComponent
-        data={[
-          {
-            title: 'Title 1'
-          },
-          {
-            title: 'Title 2'
-          },
-          {
-            title: 'Title 3'
-          },
-          {
-            title: 'Title 4'
-          }
-        ]}
-      />
+      <IndexPage />
     </div>
   )
 }

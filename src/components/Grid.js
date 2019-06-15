@@ -10,7 +10,7 @@ const GridComponent = props => {
       dataSource={data}
       renderItem={item => (
         <List.Item>
-          <CardComponent />
+          <CardComponent data={item} />
         </List.Item>
       )}
     />
