@@ -1,14 +1,19 @@
 import React from 'react'
-// eslint-disable-next-line
-import logo from './logo.svg'
 import './App.css'
 import 'antd/dist/antd.css'
 import IndexPage from './pages/Index'
+import DetailPage from './pages/Detail'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 function App() {
   return (
     <div>
-      <IndexPage />
+      <Switch>
+        <Route exact path="/" component={IndexPage} />
+        <Route path="/detail" component={DetailPage} />
+        <Redirect to="/" />
+      </Switch>
+      {/* <IndexPage /> */}
     </div>
   )
 }

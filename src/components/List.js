@@ -2,9 +2,19 @@ import { List, Button, Row, Col } from 'antd'
 import { NumberFormat } from './NumberFormat'
 import React from 'react'
 import { BoxShadow } from './'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { getDetail } from '../actions/detail'
 
 const ListComponent = props => {
   const { data } = props
+
+  const onClickDetail = (e, data) => {
+    const { getDetail } = props
+    getDetail(data)
+    props.history.push('/detail')
+  }
+
   return (
     <div className="demo-infinite-container">
       <List
@@ -25,7 +35,11 @@ const ListComponent = props => {
                   <div style={{ textAlign: 'center' }}>
                     {NumberFormat(item.price)}
                     <br />
-                    <Button style={{ width: '100%' }} type="primary">
+                    <Button
+                      style={{ width: '100%' }}
+                      onClick={e => onClickDetail(e, item)}
+                      type="primary"
+                    >
                       Detail
                     </Button>
                   </div>
@@ -39,4 +53,11 @@ const ListComponent = props => {
   )
 }
 
-export default ListComponent
+const mapStateToProps = state => ({
+  detail: state
+})
+
+export default connect(
+  mapStateToProps,
+  { getDetail }
+)(withRouter(ListComponent))

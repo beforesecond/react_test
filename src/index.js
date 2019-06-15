@@ -9,6 +9,7 @@ import rootReducer from './reducers'
 import rootSagas from './sagas'
 import { Provider } from 'react-redux'
 import logger from 'redux-logger'
+import { BrowserRouter } from 'react-router-dom'
 
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware, logger))
@@ -16,7 +17,9 @@ sagaMiddleware.run(rootSagas)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 )
