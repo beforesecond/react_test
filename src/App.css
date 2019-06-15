@@ -41,6 +41,17 @@
   text-align: justify;
 }
 
+div .shrink {
+  transition: 1s ease;
+}
+
+div .shrink :hover {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+  transition: 1s ease;
+}
+
 .App-link {
   color: #61dafb;
 }

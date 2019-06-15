@@ -1,12 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getProduct, getProductSuccess } from '../actions/products'
-import { CardComponent, GridComponent } from '../components'
+import { Layout, Button } from 'antd'
+import { CardComponent, GridComponent, ListComponent } from '../components'
+const { Header, Footer, Sider, Content } = Layout
+const ButtonGroup = Button.Group
 
 class IndexPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      grid: true,
+      list: false
+    }
+  }
+
   componentDidMount() {
     const { getProduct } = this.props
     getProduct({})
+  }
+
+  onClickGrid() {
+    this.setState({
+      grid: true,
+      list: false
+    })
+  }
+
+  onClickList() {
+    this.setState({
+      grid: false,
+      list: true
+    })
   }
 
   render() {
@@ -26,9 +51,56 @@ class IndexPage extends Component {
         })
       })
     }
-    console.log(product)
 
-    return <GridComponent data={gridData} />
+    //  return <GridComponent data={gridData} />
+    if (this.state.list == true) {
+      return (
+        <Layout>
+          <Header style={{ textAlign: 'right' }}>
+            <ButtonGroup>
+              <Button
+                type="primary"
+                onClick={this.onClickGrid.bind(this)}
+                icon="appstore"
+              />
+              <Button
+                type="primary"
+                onClick={this.onClickList.bind(this)}
+                icon="unordered-list"
+              />
+            </ButtonGroup>
+          </Header>
+          <Content>
+            <ListComponent data={gridData} />
+          </Content>
+          <Footer>Footer</Footer>
+        </Layout>
+      )
+    }
+    if (this.state.grid == true) {
+      return (
+        <Layout>
+          <Header style={{ textAlign: 'right' }}>
+            <ButtonGroup>
+              <Button
+                type="primary"
+                onClick={this.onClickGrid.bind(this)}
+                icon="appstore"
+              />
+              <Button
+                type="primary"
+                onClick={this.onClickList.bind(this)}
+                icon="unordered-list"
+              />
+            </ButtonGroup>
+          </Header>
+          <Content>
+            <GridComponent data={gridData} />
+          </Content>
+          <Footer>Footer</Footer>
+        </Layout>
+      )
+    }
   }
 }
 
