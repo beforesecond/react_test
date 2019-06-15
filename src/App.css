@@ -41,15 +41,12 @@
   text-align: justify;
 }
 
-div .shrink {
+.shrink {
   transition: 1s ease;
 }
 
-div .shrink :hover {
-  -webkit-transform: scale(1.02);
-  -ms-transform: scale(1.02);
-  transform: scale(1.02);
-  transition: 1s ease;
+.shrink :hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
 .App-link {

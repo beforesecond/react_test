@@ -1,6 +1,7 @@
 import { List, Button, Row, Col } from 'antd'
 import { NumberFormat } from './NumberFormat'
 import React from 'react'
+import { BoxShadow } from './'
 
 const ListComponent = props => {
   const { data } = props
@@ -10,7 +11,7 @@ const ListComponent = props => {
         dataSource={data}
         renderItem={item => (
           <List.Item key={item.id}>
-            <div class="shrink">
+            <BoxShadow>
               <Row>
                 <Col span={16}>
                   <List.Item.Meta
@@ -30,7 +31,7 @@ const ListComponent = props => {
                   </div>
                 </Col>
               </Row>
-            </div>
+            </BoxShadow>
           </List.Item>
         )}
       />
