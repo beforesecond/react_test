@@ -42,12 +42,16 @@ class DetailComponent extends Component {
 
     return (
       <div>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>
-            <Link to="/">Home</Link>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>{data.title}</Breadcrumb.Item>
-        </Breadcrumb>
+        <Row>
+          <Col offset={2} span={22}>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>
+                <Link to="/">Home</Link>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>{data.title}</Breadcrumb.Item>
+            </Breadcrumb>
+          </Col>
+        </Row>
         <Row>
           <Col span={8}>
             <div style={{ textAlign: 'center' }}>

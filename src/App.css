@@ -45,6 +45,14 @@
   transition: 1s ease;
 }
 
+img {
+  border-radius: 4px;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .shrink :hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
