@@ -16,37 +16,53 @@ const ListComponent = props => {
   }
 
   return (
-    <div className="demo-infinite-container">
+    <div className="container">
       <List
         dataSource={data}
         renderItem={item => (
-          <List.Item key={item.id}>
+          <div>
+            <p />
             <BoxShadow>
               <Row>
                 <Col span={16}>
-                  <List.Item.Meta
+                  {/* <List.Item.Meta
                     //  avatar={<Avatar src={item.image} />}
                     avatar={<img width="100" height="100" src={item.image} />}
                     title={<a href="https://ant.design">{item.title}</a>}
                     description={item.description}
-                  />
+                  /> */}
+                  <Row>
+                    <Col span={6}>
+                      <img width="200" height="200" src={item.image} />
+                    </Col>
+                    <Col span={18}>
+                      <Row>
+                        <h1>{item.title}</h1>
+                      </Row>
+                      <Row>{item.description}</Row>
+                    </Col>
+                  </Row>
                 </Col>
-                <Col offset={4} span={2}>
-                  <div style={{ textAlign: 'center' }}>
-                    {NumberFormat(item.price)}
-                    <br />
-                    <Button
-                      style={{ width: '100%' }}
-                      onClick={e => onClickDetail(e, item)}
-                      type="primary"
-                    >
-                      Detail
-                    </Button>
+
+                <Col offset={4} span={2} height="100%">
+                  <div class="list-right">
+                    <div class="text-red list-right-child">
+                      {NumberFormat(item.price)}
+                      <br />
+                      <Button
+                        style={{ width: '100%' }}
+                        onClick={e => onClickDetail(e, item)}
+                        type="primary"
+                      >
+                        Detail
+                      </Button>
+                    </div>
                   </div>
                 </Col>
               </Row>
             </BoxShadow>
-          </List.Item>
+            <p />
+          </div>
         )}
       />
     </div>

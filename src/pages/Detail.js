@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { DetailComponent } from '../components'
+import {
+  DetailComponent,
+  ContentComponent,
+  FooterComponent
+} from '../components'
 import { Layout, Button } from 'antd'
 const { Header, Footer, Sider, Content } = Layout
 
@@ -13,7 +17,10 @@ class DetailPage extends Component {
     return (
       <Layout>
         <Header style={{ textAlign: 'right' }} />
-        <DetailComponent />
+        <ContentComponent>
+          <DetailComponent />
+        </ContentComponent>
+        <FooterComponent />
       </Layout>
     )
   }

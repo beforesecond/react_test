@@ -64,6 +64,7 @@ class DetailComponent extends Component {
                 {NumberFormat(data.price)}
               </div>
             </Row>
+            <p />
             <Row>
               <ButtonGroup>
                 <Button
@@ -83,11 +84,13 @@ class DetailComponent extends Component {
                 />
               </ButtonGroup>
             </Row>
+            <p />
             <Row>
               <Button type="primary">Add to cart</Button>
             </Row>
           </Col>
         </Row>
+        <p />
       </div>
     )
   }

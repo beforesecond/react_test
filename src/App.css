@@ -49,6 +49,16 @@
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
+.list-right {
+  height: 200px;
+}
+
+.list-right-child {
+  text-align: center;
+  top: 25%;
+  position: absolute;
+}
+
 .App-link {
   color: #61dafb;
 }

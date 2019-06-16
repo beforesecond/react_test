@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getProduct, getProductSuccess } from '../actions/products'
 import { Layout, Button } from 'antd'
-import { CardComponent, GridComponent, ListComponent } from '../components'
+import {
+  CardComponent,
+  GridComponent,
+  ListComponent,
+  ContentComponent,
+  FooterComponent
+} from '../components'
 const { Header, Footer, Sider, Content } = Layout
 const ButtonGroup = Button.Group
 
@@ -70,10 +76,13 @@ class IndexPage extends Component {
               />
             </ButtonGroup>
           </Header>
-          <Content>
-            <ListComponent data={gridData} />
-          </Content>
-          <Footer>Footer</Footer>
+          <ContentComponent>
+            <Content>
+              <ListComponent data={gridData} />
+            </Content>
+          </ContentComponent>
+
+          <FooterComponent />
         </Layout>
       )
     }
@@ -94,10 +103,13 @@ class IndexPage extends Component {
               />
             </ButtonGroup>
           </Header>
-          <Content>
-            <GridComponent data={gridData} />
-          </Content>
-          <Footer>Footer</Footer>
+          <ContentComponent>
+            <Content>
+              <GridComponent data={gridData} />
+            </Content>
+          </ContentComponent>
+
+          <FooterComponent />
         </Layout>
       )
     }
