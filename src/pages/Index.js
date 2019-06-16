@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getProduct, getProductSuccess } from '../actions/products'
-import { Layout, Button } from 'antd'
+import { Layout, Button, Spin } from 'antd'
 import {
   CardComponent,
   GridComponent,
@@ -56,6 +56,31 @@ class IndexPage extends Component {
           description: items.description
         })
       })
+    }
+
+    if (gridData.length == 0) {
+      return (
+        <Spin tip="Loading...">
+          <Layout>
+            <Header style={{ textAlign: 'right' }}>
+              <ButtonGroup>
+                <Button
+                  type="primary"
+                  onClick={this.onClickGrid.bind(this)}
+                  icon="appstore"
+                />
+                <Button
+                  type="primary"
+                  onClick={this.onClickList.bind(this)}
+                  icon="unordered-list"
+                />
+              </ButtonGroup>
+            </Header>
+
+            <FooterComponent />
+          </Layout>
+        </Spin>
+      )
     }
 
     //  return <GridComponent data={gridData} />
